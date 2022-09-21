@@ -51,7 +51,12 @@ export class SidebarSearchComponent implements OnInit {
         }
 
         menu.forEach((menuItem) => {
-            if (menuItem.name.includes(this.searchText) && menuItem.path) {
+            if (
+                menuItem.path &&
+                menuItem.name
+                    .toLowerCase()
+                    .includes(this.searchText.toLowerCase())
+            ) {
                 this.foundMenuItems.push(menuItem);
             }
             if (menuItem.children) {
@@ -66,8 +71,14 @@ export class SidebarSearchComponent implements OnInit {
 
     boldString(str, substr) {
         return str.replaceAll(
-            substr,
-            `<strong class="text-light">${substr}</strong>`
+            this.capitalizeFirstLetter(substr),
+            `<strong class="text-light">${this.capitalizeFirstLetter(
+                substr
+            )}</strong>`
         );
+    }
+
+    capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 }
