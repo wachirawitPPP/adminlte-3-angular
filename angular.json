@@ -22,8 +22,14 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/styles.scss"],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "styles": [
+                            "src/styles.scss",
+                            "node_modules/ngx-toastr/toastr.css"
+                        ],
                         "scripts": [],
                         "vendorChunk": true,
                         "extractLicenses": false,
@@ -92,15 +98,24 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
-                        "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/styles.scss"],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "styles": [
+                            "src/styles.scss",
+                            "node_modules/ngx-toastr/toastr.css"
+                        ],
                         "scripts": []
                     }
                 },
                 "lint": {
                     "builder": "@angular-eslint/builder:lint",
                     "options": {
-                        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+                        "lintFilePatterns": [
+                            "src/**/*.ts",
+                            "src/**/*.html"
+                        ]
                     }
                 },
                 "e2e": {
@@ -121,7 +136,7 @@
     "cli": {
         "analytics": "43a7ce40-5fb9-4a0d-8b40-b48fc0426e9d",
         "schematicCollections": [
-          "@angular-eslint/schematics"
+            "@angular-eslint/schematics"
         ]
     }
 }
