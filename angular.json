@@ -32,6 +32,7 @@
                         ],
                         "scripts": [],
                         "vendorChunk": true,
+                        "preserveSymlinks": true,
                         "extractLicenses": false,
                         "buildOptimizer": false,
                         "sourceMap": true,

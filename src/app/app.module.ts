@@ -19,7 +19,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {MessagesComponent} from '@modules/main/header/messages/messages.component';
 import {NotificationsComponent} from '@modules/main/header/notifications/notifications.component';
 
-import {registerLocaleData} from '@angular/common';
+import {CommonModule, registerLocaleData} from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import {UserComponent} from '@modules/main/header/user/user.component';
 import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.component';
@@ -33,10 +33,8 @@ import {StoreModule} from '@ngrx/store';
 import {authReducer} from './store/auth/reducer';
 import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
-import {defineCustomElements} from '@profabric/web-components/loader';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 
-defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
@@ -64,6 +62,8 @@ registerLocaleData(localeEn, 'en-EN');
         SidebarSearchComponent
     ],
     imports: [
+        ProfabricComponentsModule,
+        CommonModule,
         BrowserModule,
         StoreModule.forRoot({auth: authReducer, ui: uiReducer}),
         HttpClientModule,
@@ -74,8 +74,7 @@ registerLocaleData(localeEn, 'en-EN');
             timeOut: 3000,
             positionClass: 'toast-top-right',
             preventDuplicates: true
-        }),
-        ProfabricComponentsModule
+        })
     ],
     providers: [],
     bootstrap: [AppComponent]
