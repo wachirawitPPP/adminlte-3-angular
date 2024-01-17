@@ -42,10 +42,10 @@
                 <!-- /.col -->
                 <div class="col-5">
                     <pf-button
-                        [type]="'submit'"
-                        [block]="true"
+                        [variant]="'primary'"
                         [loading]="isAuthLoading"
                         [disabled]="isFacebookLoading || isGoogleLoading"
+                        (click)="loginByAuth()"
                     >
                         Sign In
                     </pf-button>
@@ -57,7 +57,7 @@
         <div class="social-auth-links text-center mb-3">
             <pf-button
                 class="mb-2"
-                [block]="true"
+                [variant]="'primary'"
                 [loading]="isFacebookLoading"
                 [disabled]="isAuthLoading || isGoogleLoading"
                 (click)="loginByFacebook()"
@@ -66,10 +66,9 @@
                 Sign in using Facebook
             </pf-button>
             <pf-button
-                [block]="true"
+                [variant]="'danger'"
                 [loading]="isGoogleLoading"
                 [disabled]="isAuthLoading || isFacebookLoading"
-                theme="danger"
                 (click)="loginByGoogle()"
             >
                 <i class="fab fa-google mr-2"></i>

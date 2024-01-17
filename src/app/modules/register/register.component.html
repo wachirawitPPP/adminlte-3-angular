@@ -62,8 +62,6 @@
                 <!-- /.col -->
                 <div class="col-5">
                     <pf-button
-                        [type]="'submit'"
-                        [block]="true"
                         [loading]="isAuthLoading"
                         [disabled]="isFacebookLoading || isGoogleLoading"
                     >
@@ -77,7 +75,6 @@
         <div class="social-auth-links text-center">
             <pf-button
                 class="mb-2"
-                [block]="true"
                 [loading]="isFacebookLoading"
                 [disabled]="isAuthLoading || isGoogleLoading"
                 (click)="registerByFacebook()"
@@ -86,7 +83,6 @@
                 Sign up using Facebook
             </pf-button>
             <pf-button
-                [block]="true"
                 [loading]="isGoogleLoading"
                 [disabled]="isAuthLoading || isFacebookLoading"
                 (click)="registerByGoogle()"

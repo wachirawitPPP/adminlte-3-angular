@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
-import {Gatekeeper} from 'gatekeeper-client-sdk';
+import { sleep } from '@/utils/helpers';
 
 @Injectable({
     providedIn: 'root'
@@ -13,8 +13,8 @@ export class AppService {
 
     async loginByAuth({email, password}) {
         try {
-            const token = await Gatekeeper.loginByAuth(email, password);
-            localStorage.setItem('token', token);
+          console.log('email',email)
+            await authLogin(email, password);
             await this.getProfile();
             this.router.navigate(['/']);
             this.toastr.success('Login success');
@@ -25,11 +25,10 @@ export class AppService {
 
     async registerByAuth({email, password}) {
         try {
-            const token = await Gatekeeper.registerByAuth(email, password);
-            localStorage.setItem('token', token);
-            await this.getProfile();
-            this.router.navigate(['/']);
-            this.toastr.success('Register success');
+          await authLogin(email, password);
+          await this.getProfile();
+          this.router.navigate(['/']);
+          this.toastr.success('Register success');
         } catch (error) {
             this.toastr.error(error.message);
         }
@@ -37,11 +36,8 @@ export class AppService {
 
     async loginByGoogle() {
         try {
-            const token = await Gatekeeper.loginByGoogle();
-            localStorage.setItem('token', token);
-            await this.getProfile();
-            this.router.navigate(['/']);
-            this.toastr.success('Login success');
+          this.toastr.warning('Not implemented');
+
         } catch (error) {
             this.toastr.error(error.message);
         }
@@ -49,11 +45,8 @@ export class AppService {
 
     async registerByGoogle() {
         try {
-            const token = await Gatekeeper.registerByGoogle();
-            localStorage.setItem('token', token);
-            await this.getProfile();
-            this.router.navigate(['/']);
-            this.toastr.success('Register success');
+          this.toastr.warning('Not implemented');
+
         } catch (error) {
             this.toastr.error(error.message);
         }
@@ -61,11 +54,8 @@ export class AppService {
 
     async loginByFacebook() {
         try {
-            const token = await Gatekeeper.loginByFacebook();
-            localStorage.setItem('token', token);
-            await this.getProfile();
-            this.router.navigate(['/']);
-            this.toastr.success('Login success');
+          this.toastr.warning('Not implemented');
+
         } catch (error) {
             this.toastr.error(error.message);
         }
@@ -73,11 +63,8 @@ export class AppService {
 
     async registerByFacebook() {
         try {
-            const token = await Gatekeeper.registerByFacebook();
-            localStorage.setItem('token', token);
-            await this.getProfile();
-            this.router.navigate(['/']);
-            this.toastr.success('Register success');
+
+            this.toastr.warning('Not implemented');
         } catch (error) {
             this.toastr.error(error.message);
         }
@@ -85,9 +72,14 @@ export class AppService {
 
     async getProfile() {
         try {
-            this.user = await Gatekeeper.getProfile();
-        } catch (error) {
-            this.logout();
+            const user = await getAuthStatus();
+            if(user) {
+              this.user = user;
+            } else {
+              this.logout();
+            }
+          } catch (error) {
+          this.logout();
             throw error;
         }
     }
@@ -99,3 +91,34 @@ export class AppService {
         this.router.navigate(['/login']);
     }
 }
+
+
+export const authLogin = (email: string, password: string) => {
+  return new Promise(async (res, rej) => {
+    await sleep(500);
+    if (email === 'admin@example.com' && password === 'admin') {
+      localStorage.setItem(
+        'authentication',
+        JSON.stringify({ profile: { email: 'admin@example.com' } })
+      );
+      return res({ profile: { email: 'admin@example.com' } });
+    }
+    return rej({ message: 'Credentials are wrong!' });
+  });
+};
+
+export const getAuthStatus = () => {
+  return new Promise(async (res, rej) => {
+    await sleep(500);
+    try {
+      let authentication = localStorage.getItem('authentication');
+      if (authentication) {
+        authentication = JSON.parse(authentication);
+        return res(authentication);
+      }
+      return res(undefined);
+    } catch (error) {
+      return res(undefined);
+    }
+  });
+};
