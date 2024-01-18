@@ -6,7 +6,7 @@
         class="brand-image"
         height="33"
         width="33"
-        rounded
+        rounded="true"
         style="opacity: 0.8"
     ></pf-image>
     <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -15,21 +15,23 @@
 <!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div
+        class="user-panel mt-3 pb-3 mb-3 d-flex"
+        style="justify-content: start; align-items: center"
+    >
         <div class="image">
             <pf-image
                 [src]="user.picture"
                 fallback-src="assets/img/default-profile.png"
-                class="img-circle"
                 alt="User Image"
                 width="34"
                 height="34"
-                rounded
-            ></pf-image>
+                rounded="true"
+            />
         </div>
         <div class="info">
             <a [routerLink]="['/profile']" class="d-block">
-                {{ user.email }}
+                {{ user.profile.email }}
             </a>
         </div>
     </div>

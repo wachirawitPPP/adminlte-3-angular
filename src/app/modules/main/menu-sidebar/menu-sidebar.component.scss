@@ -18,3 +18,9 @@
 .form-inline {
     justify-content: center;
 }
+
+pf-image {
+    border-radius: 100%;
+    --pf-margin: 0;
+    --pf-padding: 0;
+}

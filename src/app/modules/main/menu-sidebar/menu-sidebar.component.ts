@@ -28,6 +28,7 @@ export class MenuSidebarComponent implements OnInit {
             this.classes = `${BASE_CLASSES} ${state.sidebarSkin}`;
         });
         this.user = this.appService.user;
+        console.log(this.user);
     }
 }
 
@@ -44,7 +45,7 @@ export const MENU = [
     },
     {
         name: 'Main Menu',
-        iconClasses: 'fas fa-folder',        
+        iconClasses: 'fas fa-folder',
         children: [
             {
                 name: 'Sub Menu',
