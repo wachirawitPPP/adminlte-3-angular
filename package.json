@@ -23,16 +23,16 @@
     }
   },
   "dependencies": {
-    "@angular/animations": "16.2.5",
-    "@angular/common": "16.2.5",
-    "@angular/compiler": "16.2.5",
-    "@angular/core": "16.2.5",
+    "@angular/animations": "17.1.0",
+    "@angular/common": "17.1.0",
+    "@angular/compiler": "17.1.0",
+    "@angular/core": "17.1.0",
     "@angular/elements": "^17.0.4",
-    "@angular/forms": "16.2.5",
-    "@angular/localize": "16.2.5",
-    "@angular/platform-browser": "16.2.5",
-    "@angular/platform-browser-dynamic": "16.2.5",
-    "@angular/router": "16.2.5",
+    "@angular/forms": "17.1.0",
+    "@angular/localize": "17.1.0",
+    "@angular/platform-browser": "17.1.0",
+    "@angular/platform-browser-dynamic": "17.1.0",
+    "@angular/router": "17.1.0",
     "@ngrx/store": "16.2.0",
     "@profabric/angular-components": "0.1.7",
     "@profabric/web-components": "0.1.7",
@@ -48,15 +48,15 @@
     "zone.js": "~0.14.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "16.2.2",
+    "@angular-devkit/build-angular": "17.1.0",
     "@angular-eslint/builder": "16.2.0",
     "@angular-eslint/eslint-plugin": "16.2.0",
     "@angular-eslint/eslint-plugin-template": "16.2.0",
     "@angular-eslint/schematics": "16.2.0",
     "@angular-eslint/template-parser": "16.2.0",
-    "@angular/cli": "16.2.2",
-    "@angular/compiler-cli": "16.2.5",
-    "@angular/language-service": "16.2.5",
+    "@angular/cli": "17.1.0",
+    "@angular/compiler-cli": "17.1.0",
+    "@angular/language-service": "17.1.0",
     "@types/jasmine": "~4.3.6",
     "@types/jasminewd2": "2.0.11",
     "@types/node": "20.6.2",
@@ -83,6 +83,6 @@
     "ts-node": "10.9.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.3.0",
-    "typescript": "5.1.6"
+    "typescript": "5.3.3"
   }
 }
