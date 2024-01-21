@@ -22,10 +22,7 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
                             "src/styles.scss",
                             "node_modules/ngx-toastr/toastr.css"
@@ -38,11 +35,7 @@
                         "sourceMap": true,
                         "optimization": false,
                         "namedChunks": true,
-                        "allowedCommonJsDependencies": [
-                            "path",
-                            "os",
-                            "fs"
-                        ]
+                        "allowedCommonJsDependencies": ["path", "os", "fs"]
                     },
                     "configurations": {
                         "production": {
@@ -77,18 +70,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                      "buildTarget": "adminlte:build"
+                        "buildTarget": "adminlte:build"
                     },
                     "configurations": {
                         "production": {
-                          "buildTarget": "adminlte:build:production"
+                            "buildTarget": "adminlte:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                      "buildTarget": "adminlte:build"
+                        "buildTarget": "adminlte:build"
                     }
                 },
                 "test": {
@@ -98,10 +91,7 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
                             "src/styles.scss",
                             "node_modules/ngx-toastr/toastr.css"
@@ -112,10 +102,7 @@
                 "lint": {
                     "builder": "@angular-eslint/builder:lint",
                     "options": {
-                        "lintFilePatterns": [
-                            "src/**/*.ts",
-                            "src/**/*.html"
-                        ]
+                        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
                     }
                 },
                 "e2e": {
@@ -135,8 +122,6 @@
     },
     "cli": {
         "analytics": "43a7ce40-5fb9-4a0d-8b40-b48fc0426e9d",
-        "schematicCollections": [
-            "@angular-eslint/schematics"
-        ]
+        "schematicCollections": ["@angular-eslint/schematics"]
     }
 }

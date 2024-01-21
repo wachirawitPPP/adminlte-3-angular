@@ -14,7 +14,10 @@ export class MainComponent implements OnInit {
     @HostBinding('class') class = 'wrapper';
     public ui: Observable<UiState>;
 
-    constructor(private renderer: Renderer2, private store: Store<AppState>) {}
+    constructor(
+        private renderer: Renderer2,
+        private store: Store<AppState>
+    ) {}
 
     ngOnInit() {
         this.ui = this.store.select('ui');

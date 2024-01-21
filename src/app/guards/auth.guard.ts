@@ -14,7 +14,10 @@ import {AppService} from '@services/app.service';
     providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanActivateChild {
-    constructor(private router: Router, private appService: AppService) {}
+    constructor(
+        private router: Router,
+        private appService: AppService
+    ) {}
 
     canActivate(
         next: ActivatedRouteSnapshot,
