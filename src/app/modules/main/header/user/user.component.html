@@ -1,9 +1,9 @@
-<pf-dropdown hide-arrow class="user-menu">
+<pf-dropdown [hideArrow]="true" class="user-menu">
     <div slot="button">
         <a class="nav-link">
             <pf-image
                 [src]="user.picture"
-                fallback-src="assets/img/default-profile.png"
+                fallbackSrc="assets/img/default-profile.png"
                 class="user-image-small"
                 width="25"
                 height="25"
@@ -16,7 +16,7 @@
         <li class="user-header bg-primary">
             <pf-image
                 [src]="user.picture"
-                fallback-src="assets/img/default-profile.png"
+                fallbackSrc="assets/img/default-profile.png"
                 class="user-image-big"
                 alt="User Image"
                 width="90"
