@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/erdkse/adminlte-3-angular/compare/v0.2.1...v0.2.2) (2024-02-17)
+
+
+### Bug Fixes
+
+* change setEnv method ([15e8b29](https://github.com/erdkse/adminlte-3-angular/commit/15e8b29de769ac2a759761c54fb9d04c239db8fd))
+
 ### [0.2.1](https://github.com/erdkse/adminlte-3-angular/compare/v0.2.0...v0.2.1) (2024-02-17)
 
 
