@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/erdkse/adminlte-3-angular/compare/v0.2.0...v0.2.1) (2024-02-17)
+
+
+### Features
+
+* add version capability ([f4f6c3f](https://github.com/erdkse/adminlte-3-angular/commit/f4f6c3f7655fdd49eaa18b8a6019c3e6207171fe))
+
 ## 0.2.0 (2024-01-19)
 
 
