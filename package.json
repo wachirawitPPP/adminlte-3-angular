@@ -5,8 +5,9 @@
     "type": "module",
     "scripts": {
         "prepare": "husky install",
-        "start": "ng serve",
-        "build": "ng build --configuration production",
+        "config": "tsx ./src/scripts/setEnv.ts",
+        "start": "npm run config -- --environment=dev && ng serve",
+        "build": "npm run config -- --environment=prod && ng build --configuration production",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
@@ -42,6 +43,7 @@
         "core-js": "3.36.0",
         "lit": "^3.1.2",
         "luxon": "3.4.4",
+        "ngx-google-analytics": "14.0.1",
         "ngx-toastr": "18.0.0",
         "process": "0.11.10",
         "rxjs": "7.8.1",
@@ -62,10 +64,11 @@
         "@angular/language-service": "17.2.1",
         "@types/jasmine": "~5.1.4",
         "@types/jasminewd2": "2.0.13",
-        "@types/node": "20.11.18",
+        "@types/node": "20.11.19",
         "@typescript-eslint/eslint-plugin": "7.0.1",
         "@typescript-eslint/parser": "7.0.1",
         "admin-lte": "3.2.0",
+        "dotenv": "^16.4.4",
         "eslint": "8.56.0",
         "fs-web": "1.0.1",
         "husky": "9.0.11",
@@ -86,6 +89,8 @@
         "ts-node": "10.9.2",
         "tslint-config-prettier": "1.18.0",
         "tslint-plugin-prettier": "2.3.0",
-        "typescript": "5.3.3"
+        "tsx": "^4.7.1",
+        "typescript": "5.3.3",
+        "yargs": "^17.7.2"
     }
 }

@@ -34,6 +34,8 @@ import {authReducer} from './store/auth/reducer';
 import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
+import {NgxGoogleAnalyticsModule} from 'ngx-google-analytics';
+import { environment } from 'environments/environment';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -74,7 +76,8 @@ registerLocaleData(localeEn, 'en-EN');
             timeOut: 3000,
             positionClass: 'toast-top-right',
             preventDuplicates: true
-        })
+        }),
+        NgxGoogleAnalyticsModule.forRoot(environment.GA_ID)
     ],
     providers: [],
     bootstrap: [AppComponent]
