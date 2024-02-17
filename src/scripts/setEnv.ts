@@ -1,10 +1,13 @@
 import {writeFile, existsSync, mkdirSync} from 'fs';
 import yargs from 'yargs';
+import {hideBin} from 'yargs/helpers';
 
 import dotenv from 'dotenv';
 dotenv.config();
 
-const environment = yargs().argv.environment;
+const {argv} = yargs(hideBin(process.argv));
+
+const environment = argv.environment;
 
 function writeFileUsingFS(targetPath, environmentFileContent) {
     writeFile(targetPath, environmentFileContent, function (err) {
