@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Sub Menu</h1>
+                <h1>Orders</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Blank Page</li>
+                    <li class="breadcrumb-item active">Orders</li>
                 </ol>
             </div>
         </div>
@@ -20,39 +20,60 @@
 <section class="content">
     <!-- Default box -->
     <div class="container-fluid">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Title</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Order List</h3>
 
-                <div class="card-tools">
-                    <button
-                        type="button"
-                        class="btn btn-tool"
-                        data-widget="collapse"
-                        data-toggle="tooltip"
-                        title="Collapse"
-                    >
-                        <i class="fa fa-minus"></i>
-                    </button>
-                    <button
-                        type="button"
-                        class="btn btn-tool"
-                        data-widget="remove"
-                        data-toggle="tooltip"
-                        title="Remove"
-                    >
-                        <i class="fa fa-times"></i>
-                    </button>
+                        <div class="card-tools">
+                            <button
+                                type="button"
+                                class="btn btn-tool"
+                                data-widget="collapse"
+                                data-toggle="tooltip"
+                                title="Collapse"
+                            >
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-tool"
+                                data-widget="remove"
+                                data-toggle="tooltip"
+                                title="Remove"
+                            >
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="order-list">
+                            <li class="order-item">
+                                Order 1
+                                <button class="btn btn-success accept-btn float-right ">Accept</button>
+                                <button class="btn btn-danger reject-btn float-right mr-2">Reject</button>
+                            </li>
+                            <li class="order-item">
+                                Order 2
+                                <button class="btn btn-success accept-btn float-right">Accept</button>
+                                <button class="btn btn-danger reject-btn float-right mr-2">Reject</button>
+                            </li>
+                            <li class="order-item">
+                                Order 3
+                                <button class="btn btn-success accept-btn float-right">Accept</button>
+                                <button class="btn btn-danger reject-btn float-right mr-2">Reject</button>
+                            </li>
+                            <!-- Add more orders here -->
+                        </ul>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">Footer</div>
+                    <!-- /.card-footer-->
                 </div>
             </div>
-            <div class="card-body">
-                Start creating your amazing application!
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer">Footer</div>
-            <!-- /.card-footer-->
         </div>
     </div>
-    <!-- /.card -->
+    <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
