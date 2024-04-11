@@ -38,6 +38,7 @@ import {NgxGoogleAnalyticsModule} from 'ngx-google-analytics';
 import { environment } from 'environments/environment';
 import { ProductListComponent } from '@pages/main-menu/product-list/product-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BlockUIModule } from 'ng-block-ui';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -71,7 +72,7 @@ registerLocaleData(localeEn, 'en-EN');
         ProfabricComponentsModule,
         CommonModule,
         FormsModule,
-        
+        BlockUIModule.forRoot(),
         BrowserModule,
         StoreModule.forRoot({auth: authReducer, ui: uiReducer}),
         HttpClientModule,
