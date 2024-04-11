@@ -39,24 +39,24 @@ export const MENU = [
         path: ['/']
     },
     {
-        name: 'Blank',
-        iconClasses: 'fas fa-file',
-        path: ['/blank']
-    },
-    {
         name: 'Main Menu',
         iconClasses: 'fas fa-folder',
         children: [
             {
-                name: 'Sub Menu',
+                name: 'Order Management',
                 iconClasses: 'far fa-address-book',
                 path: ['/sub-menu-1']
             },
             {
-                name: 'Blank',
+                name: 'Product Management 1',
                 iconClasses: 'fas fa-file',
                 path: ['/sub-menu-2']
-            }
+            },
+            {
+                name: 'Product Management 2',
+                iconClasses: 'fas fa-file',
+                path: ['/product-list']
+            },
         ]
     }
 ];

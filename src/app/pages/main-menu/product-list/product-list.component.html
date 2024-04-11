@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Product List 1</h1>
+                <h1>Product List</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Blank Page</li>
+                    <li class="breadcrumb-item active">Product List</li>
                 </ol>
             </div>
         </div>
@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Title</h3>
+                <h3 class="card-title">Product Type 1</h3>
 
                 <div class="card-tools">
                     <button
@@ -55,7 +55,7 @@
                             <div class="card-body">
                                 Start creating your amazing application for Item 1!
                             </div>
-                            <div class="card-footer">Footer</div>
+                            <div class="card-footer">description</div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -66,7 +66,7 @@
                             <div class="card-body">
                                 Start creating your amazing application for Item 2!
                             </div>
-                            <div class="card-footer">Footer</div>
+                            <div class="card-footer">description</div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -77,14 +77,45 @@
                             <div class="card-body">
                                 Start creating your amazing application for Item 3!
                             </div>
-                            <div class="card-footer">Footer</div>
+                            <div class="card-footer">description</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.card-body -->
-            <div class="card-footer">Footer</div>
-            <!-- /.card-footer-->
+           
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="card bg-light mb-3">
+            <div class="card-header ">
+                <h3 class="card-title">Product Type 2</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>User ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let item of productListFindUserId">
+                            <th scope="row">{{item.id}}</th>
+                            <td>{{item.userId}}</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.completed}}</td>
+                            <td>
+                                <button *ngIf="item.completed == false" type="button" class="btn btn-success" (click)="onChangeStatus(item,item.completed,item.id)">true</button>
+                                <button *ngIf="item.completed == true" type="button" class="btn btn-danger">false</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           
         </div>
     </div>
     <!-- /.card -->

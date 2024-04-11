@@ -11,6 +11,7 @@ import {NonAuthGuard} from '@guards/non-auth.guard';
 import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.component';
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {SubMenuComponent} from '@pages/main-menu/sub-menu/sub-menu.component';
+import { ProductListComponent } from '@pages/main-menu/product-list/product-list.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,10 @@ const routes: Routes = [
             {
                 path: 'blank',
                 component: BlankComponent
+            },
+            {
+                path:'product-list',
+                component: ProductListComponent
             },
             {
                 path: 'sub-menu-1',
