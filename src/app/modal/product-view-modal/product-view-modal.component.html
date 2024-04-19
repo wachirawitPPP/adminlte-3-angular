@@ -1,22 +1,36 @@
 <div class="modal-header bg-primary">
-    <h5 class="modal-title text-white" id="productModalLabel">Product Details</h5>
-    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
-      <span aria-hidden="true">&times;</span>
+    <h5 class="modal-title text-white" id="productModalLabel">{{ title }}</h5>
+    <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="closeModal()"
+    >
+        <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  <div class="modal-body">
+</div>
+<div class="modal-body">
     <div class="row">
-      <div class="col-md-4">
-        <img src="./assets/img/logo.png" class="img-fluid" alt="Product Image">
-      </div>
-      <div class="col-md-8">
-        <h4>Name of Product</h4>
-        <p>Details of the product go here. You can provide any relevant information about the product in this section.</p>
-        <!-- Additional details can be added here -->
-      </div>
+        <div class="col-md-4">
+            <img
+                src="./assets/img/logo.png"
+                class="img-fluid"
+                alt="Product Image"
+            />
+        </div>
+        <div class="col-md-8">
+            <h4>Name of Product</h4>
+            <p>
+                Details of the product go here. You can provide any relevant
+                information about the product in this section.
+            </p>
+            <!-- Additional details can be added here -->
+        </div>
     </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">
+        Close
+    </button>
     <!-- Additional buttons can be added here -->
-  </div>
+</div>

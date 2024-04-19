@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-    apiBaseUrl: string = 'https://jsonplaceholder.typicode.com/todos/'
+    // apiBaseUrl: string = 'https://jsonplaceholder.typicode.com/todos/'
+    apiBaseUrl: string = 'http://localhost:3000/books'
     constructor(private http: HttpClient) {}
 
     getAllData(): Observable<any[]> {

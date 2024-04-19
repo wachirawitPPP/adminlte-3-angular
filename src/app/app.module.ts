@@ -39,6 +39,10 @@ import { environment } from 'environments/environment';
 import { ProductListComponent } from '@pages/main-menu/product-list/product-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlockUIModule } from 'ng-block-ui';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -69,6 +73,7 @@ registerLocaleData(localeEn, 'en-EN');
         
     ],
     imports: [
+        
         ProfabricComponentsModule,
         CommonModule,
         FormsModule,
@@ -85,9 +90,15 @@ registerLocaleData(localeEn, 'en-EN');
             preventDuplicates: true
         }),
         NgxGoogleAnalyticsModule.forRoot(environment.GA_ID),
-        NgbModule
+        NgbModule,
+        AngularFirestoreModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig)
+       
+        
+         
+        
     ],
-    providers: [],
+    providers: [AngularFirestoreModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

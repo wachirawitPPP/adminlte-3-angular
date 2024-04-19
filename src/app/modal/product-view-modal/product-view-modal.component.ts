@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './product-view-modal.component.scss'
 })
 export class ProductViewModalComponent {
+  @Input() title:string
   @Input() product: any; // Input property to receive product details
   @Output() closeModalEvent = new EventEmitter(); // Output event to close the modal
 
